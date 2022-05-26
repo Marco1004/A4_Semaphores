@@ -1673,6 +1673,6 @@ C:\Users\marco\ncs\v1.9.0\zephyr\subsys\usb\class\audio\Kconfig
 C:\Users\marco\ncs\v1.9.0\zephyr\subsys\usb\class\dfu\Kconfig
 C:\Users\marco\ncs\v1.9.0\zephyr\subsys\usb\class\hid\Kconfig
 C:\Users\marco\ncs\v1.9.0\zephyr\subsys\usb\class\netusb\Kconfig
-D:\2021-2022\SETR\Pratica\A4\A4_tasks\build_nrf52840dk_nrf52840\Kconfig\Kconfig.modules
-D:\2021-2022\SETR\Pratica\A4\A4_tasks\build_nrf52840dk_nrf52840\Kconfig\Kconfig.shield
-D:\2021-2022\SETR\Pratica\A4\A4_tasks\build_nrf52840dk_nrf52840\Kconfig\Kconfig.shield.defconfig
+D:\2021-2022\SETR\Pratica\A4_Semaphores\build_nrf52840dk_nrf52840\Kconfig\Kconfig.modules
+D:\2021-2022\SETR\Pratica\A4_Semaphores\build_nrf52840dk_nrf52840\Kconfig\Kconfig.shield
+D:\2021-2022\SETR\Pratica\A4_Semaphores\build_nrf52840dk_nrf52840\Kconfig\Kconfig.shield.defconfig

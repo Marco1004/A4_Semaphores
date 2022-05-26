@@ -557,7 +557,7 @@ rule C_STATIC_LIBRARY_LINKER__kernel_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Users\marco\ncs\v1.9.0\toolchain\opt\bin\cmake.exe --regenerate-during-build -SD:\2021-2022\SETR\Pratica\A4\A4_tasks -BD:\2021-2022\SETR\Pratica\A4\A4_tasks\build_nrf52840dk_nrf52840
+  command = C:\Users\marco\ncs\v1.9.0\toolchain\opt\bin\cmake.exe --regenerate-during-build -SD:\2021-2022\SETR\Pratica\A4_Semaphores -BD:\2021-2022\SETR\Pratica\A4_Semaphores\build_nrf52840dk_nrf52840
   description = Re-running CMake...
   generator = 1
 

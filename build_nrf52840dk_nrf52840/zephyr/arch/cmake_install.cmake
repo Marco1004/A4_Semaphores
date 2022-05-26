@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/arch/common/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/arch/common/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/arch/arch/arm/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/arch/arch/arm/cmake_install.cmake")
 endif()
 

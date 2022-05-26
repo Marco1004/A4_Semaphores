@@ -39,86 +39,86 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/debug/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/debug/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/logging/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/logging/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/fs/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/fs/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/ipc/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/ipc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/mgmt/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/mgmt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/random/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/random/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/storage/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/storage/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/fb/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/fb/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/portability/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/portability/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/pm/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/pm/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/stats/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/stats/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/task_wdt/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/task_wdt/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/testsuite/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/testsuite/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/tracing/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/tracing/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/canbus/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/canbus/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/timing/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/timing/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/zephyr/subsys/modbus/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/subsys/modbus/cmake_install.cmake")
 endif()
 

@@ -39,36 +39,36 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/modules/nrf/ext/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/modules/nrf/ext/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/modules/nrf/lib/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/modules/nrf/lib/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/modules/nrf/samples/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/modules/nrf/samples/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/modules/nrf/subsys/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/modules/nrf/subsys/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/modules/nrf/modules/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/modules/nrf/modules/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/modules/nrf/drivers/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/modules/nrf/drivers/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/2021-2022/SETR/Pratica/A4/A4_tasks/build_nrf52840dk_nrf52840/modules/nrf/tests/cmake_install.cmake")
+  include("D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/modules/nrf/tests/cmake_install.cmake")
 endif()
 

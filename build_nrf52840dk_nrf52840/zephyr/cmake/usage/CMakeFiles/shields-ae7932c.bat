@@ -1,5 +1,5 @@
 @echo off
-cd /D D:\2021-2022\SETR\Pratica\A4\A4_tasks\build_nrf52840dk_nrf52840\zephyr\cmake\usage || (set FAIL_LINE=2& goto :ABORT)
+cd /D D:\2021-2022\SETR\Pratica\A4_Semaphores\build_nrf52840dk_nrf52840\zephyr\cmake\usage || (set FAIL_LINE=2& goto :ABORT)
 C:\Users\marco\ncs\v1.9.0\toolchain\opt\bin\cmake.exe -E echo adafruit_2_8_tft_touch_v2 || (set FAIL_LINE=3& goto :ABORT)
 C:\Users\marco\ncs\v1.9.0\toolchain\opt\bin\cmake.exe -E echo adafruit_winc1500 || (set FAIL_LINE=4& goto :ABORT)
 C:\Users\marco\ncs\v1.9.0\toolchain\opt\bin\cmake.exe -E echo atmel_rf2xx || (set FAIL_LINE=5& goto :ABORT)
