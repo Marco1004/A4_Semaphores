@@ -132,6 +132,9 @@ D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/drivers
 D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/drivers/disk/CMakeFiles/rebuild_cache.dir
 D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/drivers/usb/CMakeFiles/edit_cache.dir
 D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/drivers/usb/CMakeFiles/rebuild_cache.dir
+D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/drivers/adc/CMakeFiles/drivers__adc.dir
+D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/drivers/adc/CMakeFiles/edit_cache.dir
+D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/drivers/adc/CMakeFiles/rebuild_cache.dir
 D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/drivers/clock_control/CMakeFiles/drivers__clock_control.dir
 D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/drivers/clock_control/CMakeFiles/edit_cache.dir
 D:/2021-2022/SETR/Pratica/A4_Semaphores/build_nrf52840dk_nrf52840/zephyr/drivers/clock_control/CMakeFiles/rebuild_cache.dir
