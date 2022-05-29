@@ -36,6 +36,7 @@
 #define ADC_CHANNEL_INPUT NRF_SAADC_INPUT_AIN1 
 
 #define BUFFER_SIZE 1
+#define VECTOR_SIZE 10                 //------------------FILTER LOCAL VECTOR SIZER-----------------
 
 /* Other defines */
 #define TIMER_INTERVAL_MSEC 1000 /* Interval between ADC samples */
@@ -62,7 +63,7 @@ static uint16_t adc_sample_buffer[BUFFER_SIZE];
 #define thread_Out_prio 1
 
 /* Thread periodicity (in ms)*/
-#define SAMP_PERIOD_MS 1000
+#define SAMP_PERIOD_MS 1000     //---------------------SAMPLING PERIOD----------------------
 
 /* Create thread stack space */
 K_THREAD_STACK_DEFINE(thread_In_stack, STACK_SIZE);
@@ -171,14 +172,15 @@ void Input(void *argA , void *argB, void *argC)
     int16_t input;
     int err=0;
     
-    printk("Input thread init (periodic)\n");
+    printk("Input (task A) thread init (periodic)\n");
 
     /* Compute next release instant */
     release_time = k_uptime_get() + SAMP_PERIOD_MS;
 
     /* Thread loop */
     while(1) {
-        
+        printk("\x1b[2J");                                    /* Clear screen */
+        printk("\x1b[H");   // Send cursor to home
         /* Do the workload */
         err=adc_sample();
         if(err) {
@@ -212,12 +214,48 @@ void Input(void *argA , void *argB, void *argC)
 void Filter(void *argA , void *argB, void *argC)
 {
     /* Other variables */
-    
+    static int local_vect[VECTOR_SIZE] = {0,0,0,0,0};
+    int avg_total;
+    static int avg_rem;
+    int sum;
+    int remaining_samples;
 
-    printk("Thread B init (sporadic, waits on a semaphore by task A)\n");
     while(1) {
         k_sem_take(&sem1,  K_FOREVER);
+       
+        for (int i = 0; i<VECTOR_SIZE-1; i++){ //Local_Vector[] <- Shared memory 1
+          local_vect[i] = local_vect[i+1];
+
+        }
+        local_vect[VECTOR_SIZE-1] = sm_1;
         
+        sum = 0;
+        for (int i = 0; i<VECTOR_SIZE; i++){ // Media com todas as amostras
+          sum = sum + local_vect[i];
+
+        }
+        avg_total = sum /VECTOR_SIZE;
+        printk("AVG_Total %d\n",avg_total);
+
+        sum = 0;
+        remaining_samples = 0;
+        for (int i = 0; i<VECTOR_SIZE; i++){ // Media sem outliars
+          if (local_vect[i] < 1.1*avg_total && local_vect[i] > 0.9*avg_total){
+            sum = sum + local_vect[i];
+
+            remaining_samples++;
+          }
+        }
+        printk("Remaining Samples Consideradas -> %d\n",remaining_samples);
+
+        if (remaining_samples>0){
+          avg_rem = sum/remaining_samples;
+        }
+        else{
+          printk("ALL OUTLIAR\n");
+        }
+        sm_2=avg_rem;
+
         k_sem_give(&sem2);    
   }
 }
@@ -227,10 +265,12 @@ void Output(void *argA , void *argB, void *argC)
     /* Other variables */
     long int output;
 
-    printk("Thread C init (sporadic, waits on a semaphore by task A)\n");
+
     while(1) {
         k_sem_take(&sem2,  K_FOREVER);
         output= sm_2;
+        printk("Output = %d", output);
+        
   }
 }
 
