@@ -1,14 +1,15 @@
-/*
- * Paulo Pedreiras, 2022/02
- * Zephyr: Simple thread creation example (2)
- * 
- * One of the tasks is periodc, the other two are activated via a semaphore. Data communicated via sharem memory 
- *
- * Base documentation:
- *      https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/zephyr/reference/kernel/index.html
- * 
- */
-
+/** \file main.c
+* \brief Sistema de tempo real utilizando threads/tasks sincronizadas com semaforos.
+*
+*  Este código permite a leitura do valor em A0, utilizando a ADC.
+*  Faz uma filtragem (Média total, remove outliars, média).
+*  Utiliza o valor final para ajustar um sinal PWM aplicado ao LED1.
+*  A sincronização é feita através da utilização de semaforos.
+*
+* \author Daniel Barra de Almeida        85111
+* \author Marco  Antonio da Silva Santos 83192
+* \date 30/05/2022
+*/
 
 #include <zephyr.h>
 #include <device.h>
@@ -110,7 +111,12 @@ struct k_timer my_timer;
 const struct device *adc_dev = NULL;
 static uint16_t adc_sample_buffer[BUFFER_SIZE];
 
-/* Takes one sample */
+/** \brief  Amostragem da ADC.
+*  Faz a leitura de uma amostra pela ADC.
+*
+* Esta função faz a leitura de uma amostra do sinal analogico
+* presente na porta A0 da placa.
+*/
 static int adc_sample(void)
 {
 	int ret;
@@ -134,6 +140,12 @@ static int adc_sample(void)
 	return ret;
 }
 
+/** \brief  Configuração.
+*  Configura a interface da placa.
+*
+* Esta função faz as configurações necessárias
+* para a interface da placa ser utilizada adequadamente.
+*/
 void config(void){
     int err=0;
 
@@ -170,7 +182,13 @@ void config(void){
     }
 }
 
-/* Main function */
+/** \brief  Função principal.
+*  Funcionamento com Semaforos.
+*
+* Esta é a funcao principal que logo de incio chama a funcção de configuração.
+* São inicializados os semaforos e criadas as Threads/Tasks para o funcionamento
+* 
+*/
 void main(void) {
 
     config();
@@ -197,7 +215,17 @@ void main(void) {
 
 } 
 
-/* Thread code implementation */
+/** \brief  Thread Input.
+*  Funcionamento de aquisição da informação
+*
+* Leitura da ADC.
+* Conversão da escala de 0 a 1023 para 0 a 3000 (correspondente de 0 a 3 V).
+* Inserir o resultao da conversão na primeira memória partilhada.
+* Aumentar o valor do primeiro semáforo (k_sem_give).
+* Esperar pelo fim do periodo de amostragem.
+* Repete.
+* 
+*/
 void Input(void *argA , void *argB, void *argC)
 {
     /* Timing variables to control task periodicity */
@@ -236,13 +264,6 @@ void Input(void *argA , void *argB, void *argC)
         
         sm_1= input;
         
-        printk("PWM DC value set to %u %%\n\r",dcValue);
-
-        err = pwm_pin_set_usec(pwm0_dev, BOARDLED_PIN,
-                  pwmPeriod_us,(unsigned int)((pwmPeriod_us*dcValue)/100), PWM_POLARITY_NORMAL);
-        if (err) {
-            printk("Error %d: failed to set pulse width\n", err);
-        }
         k_sem_give(&sem1);
 
         /* Wait for next release instant */ 
@@ -255,6 +276,16 @@ void Input(void *argA , void *argB, void *argC)
     }
 }
 
+/** \brief  Thread Filter.
+*  Funcionamento de filtragem da informação
+*
+* Esperar pelo levantamento do semáforo (k_sem_take).
+* Retirar o valor presente na memoria partilhada e adicioná-lo a um vetor local, retirando o mais antigo.
+* Filtragem (Média total, remove outliars, média dos restantes).
+* Inserir resultado numa segunda memória partilhada.
+* Aumentar o valor do segundo semáforo (k_sem_give).
+* 
+*/
 void Filter(void *argA , void *argB, void *argC)
 {
     /* Other variables */
@@ -304,6 +335,16 @@ void Filter(void *argA , void *argB, void *argC)
   }
 }
 
+/** \brief  Thread Output.
+*  Funcionamento de saída da informação.
+*
+* Esperar o levantamento do segundo semáforo (k_sem_take).
+* Ler o valor da segunda memória partilhada.
+* Mostrar no terminal o valor lido.
+* Ajustar o duty-cycle do PWM aplicado ao LED1.
+* Repete.
+* 
+*/
 void Output(void *argA , void *argB, void *argC)
 {
     /* Other variables */
@@ -315,6 +356,13 @@ void Output(void *argA , void *argB, void *argC)
         output= sm_2;
         dcValue = (100*output)/3000;
         printk("Output = %d\n", output);
+        printk("PWM DC value set to %u %%\n\r",dcValue);
+
+        err = pwm_pin_set_usec(pwm0_dev, BOARDLED_PIN,
+                  pwmPeriod_us,(unsigned int)((pwmPeriod_us*dcValue)/100), PWM_POLARITY_NORMAL);
+        if (err) {
+            printk("Error %d: failed to set pulse width\n", err);
+        }
         
   }
 }
