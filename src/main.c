@@ -348,7 +348,8 @@ void Filter(void *argA , void *argB, void *argC)
 void Output(void *argA , void *argB, void *argC)
 {
     /* Other variables */
-    long int output;
+    int output;
+    int ret = 0;
 
 
     while(1) {
@@ -358,10 +359,10 @@ void Output(void *argA , void *argB, void *argC)
         printk("Output = %d\n", output);
         printk("PWM DC value set to %u %%\n\r",dcValue);
 
-        err = pwm_pin_set_usec(pwm0_dev, BOARDLED_PIN,
+        ret = pwm_pin_set_usec(pwm0_dev, BOARDLED_PIN,
                   pwmPeriod_us,(unsigned int)((pwmPeriod_us*dcValue)/100), PWM_POLARITY_NORMAL);
-        if (err) {
-            printk("Error %d: failed to set pulse width\n", err);
+        if (ret) {
+            printk("Error %d: failed to set pulse width\n", ret);
         }
         
   }
