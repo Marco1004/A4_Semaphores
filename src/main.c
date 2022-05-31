@@ -41,7 +41,6 @@
 
 
 /* Other defines */
-#define TIMER_INTERVAL_MSEC 1000 /* Interval between ADC samples */
 #define BUFFER_SIZE 1
 #define VECTOR_SIZE 10           /* Filter Local-Vector Size */
 
@@ -257,6 +256,8 @@ void Input(void *argA , void *argB, void *argC)
             }
             else {
                 input = (uint16_t)(1000*adc_sample_buffer[0]*((float)3/1023));
+                printk("Actual Sample: %d\n", input);
+                
                 /* ADC is set to use gain of 1/4 and reference VDD/4, so input range is 0...VDD (3 V), with 10 bit resolution */
                 //printk("adc reading: raw:%4u / %4u mV: \n\r",adc_sample_buffer[0],(uint16_t)(1000*adc_sample_buffer[0]*((float)3/1023)));
             }
